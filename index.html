@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div ng-app="myApp">
+      <h1>Formulario</h1>
+      <form ng-controller="control" name="Formulario">
+        Codigo:
+        <input
+          autocomplete="off"
+          type="number"
+          ng-model="codigo"
+          name="codigo"
+          required
+        />
+        La validacion es: {{Formulario.codigo.$valid}}
+        <br />
+        <br />
+        Horas Trabajadas:
+        <input
+          autocomplete="off"
+          type="number"
+          ng-model="horasT"
+          name="horasT"
+          required
+        />
+        La validacion es: {{Formulario.horasT.$valid}}
+        <br />
+        <br />
+        Tarifa Hora:
+        <input
+          autocomplete="off"
+          type="number"
+          ng-model="salario"
+          name="salario"
+          required
+        />
+        La validacion es: {{Formulario.salario.$dirty}}
+        <br />
+
+        <br />
+        Sueldo Bruto: {{TrabajoHrs}} <br />
+        Descuento: {{descuento}} <br />
+        Sueldo Neto: {{Sueldo()}}
+      </form>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
